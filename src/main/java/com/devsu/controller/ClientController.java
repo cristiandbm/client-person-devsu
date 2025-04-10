@@ -25,8 +25,8 @@ public class ClientController {
 
 	@PostMapping
 	public ResponseEntity<Client> createClient(@RequestBody Client client) {
-		return new ResponseEntity<Client>(clientService.createClient(client),
-				HttpStatus.CREATED);
+		clientService.createClient(client);
+		return ResponseEntity.status(HttpStatus.CREATED).build();
 	}
 
 	@GetMapping

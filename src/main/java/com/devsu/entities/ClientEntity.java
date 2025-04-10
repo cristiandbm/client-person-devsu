@@ -37,7 +37,6 @@ public class ClientEntity {
 
 	private boolean status;
 
-	@OneToMany(mappedBy = "clientId", cascade = CascadeType.ALL)
-	private List<AccountEntity> accounts;
+	private String account;
 
 }

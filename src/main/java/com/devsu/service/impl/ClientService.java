@@ -19,8 +19,8 @@ public class ClientService implements IClientService {
 
 	@Override
 	public Client createClient(Client client) {
-		clientRepository.save(ClientMapper.clientDtoToClientEntity(client));
-		return null;
+		ClientEntity clientSaved = clientRepository.save(ClientMapper.clientDtoToClientEntity(client));
+		return ClientMapper.clientEntityToClientDto(clientSaved);
 
 	}
 
